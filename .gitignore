@@ -1,0 +1,42 @@
+# Python virtual environment — never push this, it's huge and machine-specific
+venv/
+env/
+.venv/
+
+# Python cache files — auto-generated, not needed in repo
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Your credentials — NEVER push this to GitHub!
+.env
+
+# Trade log and AI Data — contains personal trading history and large datasets
+trade_log.csv
+training_data.csv
+*.pkl
+
+# Compiled Python files
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE and editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Pytest cache
+.pytest_cache/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/

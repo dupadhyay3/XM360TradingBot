@@ -1,0 +1,6 @@
+MetaTrader5
+pandas
+scikit-learn
+ta
+schedule
+python-dotenv
