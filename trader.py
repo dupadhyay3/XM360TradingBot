@@ -74,7 +74,18 @@ def execute_trade(prediction):
     if not check_symbol(symbol):
         return False
         
-    # Close any existing positions for this symbol
+    target_type = mt5.ORDER_TYPE_BUY if prediction == 1 else mt5.ORDER_TYPE_SELL
+    
+    # Check if we already have an open position in the SAME direction
+    positions = mt5.positions_get(symbol=symbol)
+    if positions and len(positions) > 0:
+        current_pos = positions[0] # Assuming one position at a time
+        if current_pos.type == target_type:
+            direction_str = "BUY" if target_type == mt5.ORDER_TYPE_BUY else "SELL"
+            print(f"  => Already in a {direction_str} position. Holding current trade.")
+            return True
+            
+    # Close any existing positions (they are in the wrong direction)
     close_positions(symbol)
     
     # Standard Stop Loss and Take Profit in "points" (Depends on broker's digits)

@@ -12,6 +12,8 @@ An automated AI-powered trading bot for the **XM broker** that connects to MetaT
 - ✅ AI model using a **Voting Ensemble** (Random Forest + Gradient Boosting)
 - ✅ Detects **8 candlestick patterns** (Doji, Hammer, Engulfing, Marubozu, etc.)
 - ✅ Uses **Bollinger Bands, ATR, RSI, MACD, Stochastic, EMA, OBV** as features
+- ✅ **Bidirectional Trading**: Automatically executes both **BUY** (long) and **SELL** (short) positions based on AI prediction
+- ✅ **Spread Optimization**: Smartly holds existing positions if the new AI prediction matches the current trade direction, saving broker spread fees
 - ✅ **Confidence threshold** — only trades when model is ≥57% confident (avoids low-quality signals)
 - ✅ Automatic **2% risk management** per trade with Stop Loss & Take Profit
 - ✅ Every trade is logged to `trade_log.csv` with timestamp, price, direction, and P&L
